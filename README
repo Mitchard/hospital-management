@@ -1,0 +1,37 @@
+
+This is the project for WPI Class CS3431 - Databases I
+
+We created a database to simulate operations of a hospital to learn about
+the design and management of databases.
+
+An Entity-Relation Diagram and a Relational Model for this database is located
+in their respectively named files.
+
+The src of the project is split into two parts: the .sql files and the JDBC files.
+
+THe .sql files are for set up and management of the database, including creating and deleting tables,
+inserting data for testing, test queries to insure the DB is set up correctly, and views and triggers
+of the DB.
+
+The JDBC is a basic application that allows users to access the DB to get patient, doctor,
+and visit information. The project, called Reporting, takes arguments as follows:
+
+    > java Reporting <username> <password> <report_num>
+
+where username and password are inputs for the database and report_num is the type of report the user
+would like to receive.
+
+The types of reports are as follows:
+    1. Report Patient Basic Information
+        - Given a patient SSN, return the patient's SSN, name, and address
+    2. Report Doctor Basic Information
+        - Given a doctor's ID number, return the doctor's ID, name, gender, school graduated from and specialty
+    3. Report Admission Basic Information
+        - Given an admission number, returns the admission number, patient's ssn, the admission date,
+          the total payment, the rooms stayed in and the time of their respective stays, and the distinct doctors
+          that examined the patient
+    4. Update  Admission Payment
+        - Given an admission number new payment total, update the payment of that admission
+
+This can be run through the terminal, by passing the jar file path as an argument, but running it through the
+IntelliJ run config is recommended.
