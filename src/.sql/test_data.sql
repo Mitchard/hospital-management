@@ -44,11 +44,26 @@ VALUES (23, 'Jane', 'Moore', 94000, 'Doctor', 204, 'Regular', 11, '23 Doc St', '
 INSERT INTO Employee(EmployeeID, FName, LName, Salary, JobTitle, OfficeNum, EmployeeRank, SupervisorID, AddressStreet, AddressCity)
 VALUES (24, 'Kyle', 'Taylor', 91000, 'Doctor', 205, 'Regular', 12, '24 Doc St', 'Townsville');
 
+INSERT INTO Employee(EmployeeID, FName, LName, Salary, JobTitle, OfficeNum, EmployeeRank, SupervisorID, AddressStreet, AddressCity)
+VALUES (35, 'Victor', 'Stone', 95000, 'Doctor', 206, 'Regular', 12, '25 Doc St', 'Townsville');
+INSERT INTO Employee(EmployeeID, FName, LName, Salary, JobTitle, OfficeNum, EmployeeRank, SupervisorID, AddressStreet, AddressCity)
+VALUES (36, 'Wendy', 'Shaw', 93000, 'Doctor', 207, 'Regular', 13, '26 Doc St', 'Townsville');
+INSERT INTO Employee(EmployeeID, FName, LName, Salary, JobTitle, OfficeNum, EmployeeRank, SupervisorID, AddressStreet, AddressCity)
+VALUES (37, 'Xander', 'Cole', 72000, 'Equipment Technician', 306, 'Regular', 10, '27 Doc St', 'Townsville');
+INSERT INTO Employee(EmployeeID, FName, LName, Salary, JobTitle, OfficeNum, EmployeeRank, SupervisorID, AddressStreet, AddressCity)
+VALUES (38, 'Yara', 'Lopez', 65000, 'Nurse', 407, 'Regular', 11, '28 Doc St', 'Townsville');
+INSERT INTO Employee(EmployeeID, FName, LName, Salary, JobTitle, OfficeNum, EmployeeRank, SupervisorID, AddressStreet, AddressCity)
+VALUES (39, 'Zack', 'Reed', 75000, 'Technician', 408, 'Regular', 12, '29 Doc St', 'Townsville');
+INSERT INTO Employee(EmployeeID, FName, LName, Salary, JobTitle, OfficeNum, EmployeeRank, SupervisorID, AddressStreet, AddressCity)
+VALUES (40, 'Ava', 'Price', 70000, 'Accountant', 409, 'Regular', 13, '30 Doc St', 'Townsville');
+
 INSERT INTO Doctor(EmployeeID, Gender, Specialty, GraduatedFrom) VALUES (20, 'M', 'Cardiology', 'WPI');
 INSERT INTO Doctor(EmployeeID, Gender, Specialty, GraduatedFrom) VALUES (21, 'F', 'Neurology', 'Harvard');
 INSERT INTO Doctor(EmployeeID, Gender, Specialty, GraduatedFrom) VALUES (22, 'M', 'Cardiology', 'WPI');
 INSERT INTO Doctor(EmployeeID, Gender, Specialty, GraduatedFrom) VALUES (23, 'F', 'Pediatrics', 'Stanford');
 INSERT INTO Doctor(EmployeeID, Gender, Specialty, GraduatedFrom) VALUES (24, 'M', 'Orthopedics', 'WPI');
+INSERT INTO Doctor(EmployeeID, Gender, Specialty, GraduatedFrom) VALUES (35, 'M', 'Oncology', 'UCLA');
+INSERT INTO Doctor(EmployeeID, Gender, Specialty, GraduatedFrom) VALUES (36, 'F', 'Dermatology', 'WPI');
 
 INSERT INTO Employee(EmployeeID, FName, LName, Salary, JobTitle, OfficeNum, EmployeeRank, SupervisorID, AddressStreet, AddressCity)
 VALUES (25, 'Liam', 'Harris', 70000, 'Equipment Technician', 301, 'Regular', 12, '25 Tech Rd', 'Townsville');
@@ -79,9 +94,17 @@ VALUES (101, 'Heart Monitor', 'HM-10', 'Check wires', 3);
 INSERT INTO EquipmentType(EquipID, EquipDesc, EquipModel, Instructions, NumberOfUnits)
 VALUES (102, 'Ventilator', 'VNT-5', 'Sanitize', 3);
 
+INSERT INTO EquipmentType(EquipID, EquipDesc, EquipModel, Instructions, NumberOfUnits)
+VALUES(103, 'Ultrasound Machine', 'US-500', 'Gel required', 4);
+INSERT INTO EquipmentType(EquipID, EquipDesc, EquipModel, Instructions, NumberOfUnits)
+VALUES (104, 'ECG Monitor', 'ECG-12', 'Electrodes required', 5);
+
 INSERT INTO CanRepairEquipment(EmployeeID, EquipmentType) VALUES (25, 100);
 INSERT INTO CanRepairEquipment(EmployeeID, EquipmentType) VALUES (26, 100);
 INSERT INTO CanRepairEquipment(EmployeeID, EquipmentType) VALUES (27, 101);
+INSERT INTO CanRepairEquipment(EmployeeID, EquipmentType) VALUES (37, 103);
+INSERT INTO CanRepairEquipment(EmployeeID, EquipmentType) VALUES (37, 104);
+INSERT INTO CanRepairEquipment(EmployeeID, EquipmentType) VALUES (26, 103);
 
 INSERT INTO Equipment(SerialNumber, TypeID, PurchaseYear, LastInspection, RoomNum)
 VALUES ('A01-02X', 100, 2010, TO_DATE('2024-10-01','YYYY-MM-DD'), 103);
@@ -103,6 +126,15 @@ INSERT INTO Equipment(SerialNumber, TypeID, PurchaseYear, LastInspection, RoomNu
 VALUES ('VNT5-02', 102, 2011, TO_DATE('2024-05-12','YYYY-MM-DD'), 302);
 INSERT INTO Equipment(SerialNumber, TypeID, PurchaseYear, LastInspection, RoomNum)
 VALUES ('VNT5-03', 102, 2008, TO_DATE('2024-03-03','YYYY-MM-DD'), 301);
+
+INSERT INTO Equipment(SerialNumber, TypeID, PurchaseYear, LastInspection, RoomNum)
+VALUES ('US500-01', 103, 2013, TO_DATE('2024-04-01','YYYY-MM-DD'), 104);
+INSERT INTO Equipment(SerialNumber, TypeID, PurchaseYear, LastInspection, RoomNum)
+VALUES ('US500-02', 103, 2016, TO_DATE('2024-06-15','YYYY-MM-DD'), 201);
+INSERT INTO Equipment(SerialNumber, TypeID, PurchaseYear, LastInspection, RoomNum)
+VALUES ('ECG12-01', 104, 2014, TO_DATE('2024-08-09','YYYY-MM-DD'), 105);
+INSERT INTO Equipment(SerialNumber, TypeID, PurchaseYear, LastInspection, RoomNum)
+VALUES ('ECG12-02', 104, 2012, TO_DATE('2024-07-20','YYYY-MM-DD'), 203);
 
 INSERT INTO Patient(SSN, FName, LName, Address, TelNum) VALUES ('111-22-3333','Adam','Lee','100 Oak St','555-0100');
 INSERT INTO Patient(SSN, FName, LName, Address, TelNum) VALUES ('222-33-4444','Beth','Kim','200 Pine St','555-0101');
