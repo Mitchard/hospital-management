@@ -146,6 +146,10 @@ INSERT INTO Patient(SSN, FName, LName, Address, TelNum) VALUES ('777-88-9999','G
 INSERT INTO Patient(SSN, FName, LName, Address, TelNum) VALUES ('888-99-0000','Holly','Ives','800 Ash St','555-0107');
 INSERT INTO Patient(SSN, FName, LName, Address, TelNum) VALUES ('999-00-1111','Ian','Jones','900 Poplar St','555-0108');
 INSERT INTO Patient(SSN, FName, LName, Address, TelNum) VALUES ('000-11-2222','Jill','King','1000 Willow St','555-0109');
+INSERT INTO Patient(SSN, FName, LName, Address, TelNum) VALUES ('123-45-6789', 'Kevin', 'Summers', '1100 Birch Rd', '555-0110');
+INSERT INTO Patient(SSN, FName, LName, Address, TelNum) VALUES ('234-56-7890', 'Laura', 'Miles', '1200 Aspen Ln', '555-0111');
+INSERT INTO Patient(SSN, FName, LName, Address, TelNum) VALUES ('345-67-8901', 'Marcus', 'Vega', '1300 Cedar Rd', '555-0112');
+INSERT INTO Patient(SSN, FName, LName, Address, TelNum) VALUES ('555-11-2223', 'Rosa', 'Diaz', '1400 Oak Ridge', '555-0123');
 
 INSERT INTO Admission(Num, AdmissionDate, LeaveDate, TotalPayment, InsurancePayment, PatientSSN, FutureVisit)
 VALUES (1000, TO_DATE('2010-01-10','YYYY-MM-DD'), TO_DATE('2010-01-15','YYYY-MM-DD'), 5000, 3000, '111-22-3333', NULL);
@@ -185,6 +189,21 @@ VALUES (1013, TO_DATE('2023-02-06','YYYY-MM-DD'), TO_DATE('2023-02-08','YYYY-MM-
 INSERT INTO Admission(Num, AdmissionDate, LeaveDate, TotalPayment, InsurancePayment, PatientSSN, FutureVisit)
 VALUES (1014, TO_DATE('2018-03-03','YYYY-MM-DD'), TO_DATE('2018-03-05','YYYY-MM-DD'), 2100, 1100, '111-22-3333', TO_DATE('2025-12-01','YYYY-MM-DD'));
 
+INSERT INTO Admission (Num, AdmissionDate, LeaveDate, TotalPayment, InsurancePayment, PatientSSN, FutureVisit)
+VALUES (1015, TO_DATE('2024-01-10','YYYY-MM-DD'), TO_DATE('2024-01-11','YYYY-MM-DD'), 2100, 1100, '123-45-6789', NULL);
+
+INSERT INTO Admission (Num, AdmissionDate, LeaveDate, TotalPayment, InsurancePayment, PatientSSN, FutureVisit)
+VALUES (1016, TO_DATE('2024-02-15','YYYY-MM-DD'), TO_DATE('2024-02-17','YYYY-MM-DD'), 3200, 1600, '234-56-7890', TO_DATE('2025-12-05','YYYY-MM-DD'));
+
+INSERT INTO Admission (Num, AdmissionDate, LeaveDate, TotalPayment, InsurancePayment, PatientSSN, FutureVisit)
+VALUES (1017, TO_DATE('2024-03-01','YYYY-MM-DD'), TO_DATE('2024-03-03','YYYY-MM-DD'), 2800, 1200, '345-67-8901', NULL);
+
+INSERT INTO Admission (Num, AdmissionDate, LeaveDate, TotalPayment, InsurancePayment, PatientSSN, FutureVisit)
+VALUES (1018, TO_DATE('2024-04-01','YYYY-MM-DD'), TO_DATE('2024-04-03','YYYY-MM-DD'), 3500, 2000, '555-11-2223', NULL);
+
+INSERT INTO Admission (Num, AdmissionDate, LeaveDate, TotalPayment, InsurancePayment, PatientSSN, FutureVisit)
+VALUES (1019, TO_DATE('2024-05-10','YYYY-MM-DD'), TO_DATE('2024-05-12','YYYY-MM-DD'), 3600, 2100, '555-11-2223', NULL);
+
 INSERT INTO Examine(DoctorID, AdmissionNum, DoctorNotes) VALUES (20, 1000, 'Checkup A');
 INSERT INTO Examine(DoctorID, AdmissionNum, DoctorNotes) VALUES (20, 1001, 'Checkup B');
 INSERT INTO Examine(DoctorID, AdmissionNum, DoctorNotes) VALUES (20, 1014, 'Follow-up C');
@@ -192,10 +211,20 @@ INSERT INTO Examine(DoctorID, AdmissionNum, DoctorNotes) VALUES (21, 1002, 'Neur
 INSERT INTO Examine(DoctorID, AdmissionNum, DoctorNotes) VALUES (22, 1003, 'Cardio consult');
 INSERT INTO Examine(DoctorID, AdmissionNum, DoctorNotes) VALUES (23, 1004, 'Pediatrics');
 INSERT INTO Examine(DoctorID, AdmissionNum, DoctorNotes) VALUES (24, 1005, 'Ortho consult');
+INSERT INTO Examine(DoctorID, AdmissionNum, DoctorNotes) VALUES (35, 1015, 'Oncology evaluation');
+INSERT INTO Examine(DoctorID, AdmissionNum, DoctorNotes) VALUES (36, 1016, 'Dermatology follow-up');
+INSERT INTO Examine(DoctorID, AdmissionNum, DoctorNotes) VALUES (35, 1017, 'General exam');
+INSERT INTO Examine(DoctorID, AdmissionNum, DoctorNotes) VALUES (20, 1018, 'ICU observation');
+INSERT INTO Examine(DoctorID, AdmissionNum, DoctorNotes) VALUES (20, 1019, 'Follow-up ICU evaluation');
 
 INSERT INTO StayIn(AdmissionNum, RoomNum, StartDate, EndDate) VALUES (1000, 101, TO_DATE('2010-01-10','YYYY-MM-DD'), TO_DATE('2010-01-15','YYYY-MM-DD'));
 INSERT INTO StayIn(AdmissionNum, RoomNum, StartDate, EndDate) VALUES (1001, 102, TO_DATE('2011-02-05','YYYY-MM-DD'), TO_DATE('2011-02-10','YYYY-MM-DD'));
 INSERT INTO StayIn(AdmissionNum, RoomNum, StartDate, EndDate) VALUES (1014, 103, TO_DATE('2018-03-03','YYYY-MM-DD'), TO_DATE('2018-03-05','YYYY-MM-DD'));
+INSERT INTO StayIn(AdmissionNum, RoomNum, StartDate, EndDate) VALUES (1015, 102, TO_DATE('2024-01-10','YYYY-MM-DD'), TO_DATE('2024-01-11','YYYY-MM-DD'));
+INSERT INTO StayIn(AdmissionNum, RoomNum, StartDate, EndDate) VALUES (1016, 101, TO_DATE('2024-02-15','YYYY-MM-DD'), TO_DATE('2024-02-17','YYYY-MM-DD'));
+INSERT INTO StayIn(AdmissionNum, RoomNum, StartDate, EndDate) VALUES (1017, 201, TO_DATE('2024-03-01','YYYY-MM-DD'), TO_DATE('2024-03-03','YYYY-MM-DD'));
+INSERT INTO StayIn(AdmissionNum, RoomNum, StartDate, EndDate) VALUES (1018, 101, TO_DATE('2024-04-01','YYYY-MM-DD'), TO_DATE('2024-04-03','YYYY-MM-DD'));
+INSERT INTO StayIn(AdmissionNum, RoomNum, StartDate, EndDate) VALUES (1019, 101, TO_DATE('2024-05-10','YYYY-MM-DD'), TO_DATE('2024-05-12','YYYY-MM-DD'));
 
 INSERT INTO RoomAccess(RoomNum, EmpID) VALUES (101, 30);
 INSERT INTO RoomAccess(RoomNum, EmpID) VALUES (102, 30);
