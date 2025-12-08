@@ -57,6 +57,15 @@ VALUES (39, 'Zack', 'Reed', 75000, 'Technician', 408, 'Regular', 12, '29 Doc St'
 INSERT INTO Employee(EmployeeID, FName, LName, Salary, JobTitle, OfficeNum, EmployeeRank, SupervisorID, AddressStreet, AddressCity)
 VALUES (40, 'Ava', 'Price', 70000, 'Accountant', 409, 'Regular', 13, '30 Doc St', 'Townsville');
 
+INSERT INTO Employee(EmployeeID, FName, LName, Salary, JobTitle, OfficeNum, EmployeeRank, AddressStreet, AddressCity)
+VALUES (50, 'Javier', 'Moncada', 120000, 'Soft eng', 500, 'Regular', '30 Doc St', 'Townsville');
+
+INSERT INTO Employee(EmployeeID, FName, LName, Salary, JobTitle, OfficeNum, EmployeeRank, AddressStreet, AddressCity)
+VALUES (50, 'Javier', 'Moncada', 120000, 'Soft eng', 500, 'Division Manager', '30 Doc St', 'Townsville');
+
+INSERT INTO Employee(EmployeeID, FName, LName, Salary, JobTitle, OfficeNum, EmployeeRank, AddressStreet, AddressCity)
+VALUES (50, 'Javier', 'Moncada', 120000, 'Soft eng', 500, 'General Manager', '30 Doc St', 'Townsville');
+
 INSERT INTO Doctor(EmployeeID, Gender, Specialty, GraduatedFrom) VALUES (20, 'M', 'Cardiology', 'WPI');
 INSERT INTO Doctor(EmployeeID, Gender, Specialty, GraduatedFrom) VALUES (21, 'F', 'Neurology', 'Harvard');
 INSERT INTO Doctor(EmployeeID, Gender, Specialty, GraduatedFrom) VALUES (22, 'M', 'Cardiology', 'WPI');
